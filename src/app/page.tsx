@@ -1,9 +1,11 @@
-import styles from './page.module.css'
+import ThemeChange from '~/components/ThemeChange'
+import './page.scss'
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <main className='main'>
       <div>this is home page</div>
+      <ThemeChange></ThemeChange>
     </main>
   )
 }
