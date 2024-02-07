@@ -5,6 +5,9 @@ function useDarkThemeListener() {
 
   useEffect(() => {
     const mediaQueryList = window.matchMedia('(prefers-color-scheme: dark)')
+
+    setIsDarkMode(mediaQueryList.matches)
+
     const handleChange = (event: MediaQueryListEvent) => {
       setIsDarkMode(event.matches)
     }
