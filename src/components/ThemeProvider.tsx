@@ -1,16 +1,17 @@
 'use client'
 import { createContext, useState } from 'react'
 import useStore from '~/hooks/store/useStore'
-import { useThemeStore } from '~/hooks/store/useThemeStore'
+import { Theme, ThemeState, useThemeStore } from '~/hooks/store/useThemeStore'
+import useDarkThemeListener from '~/hooks/useDarkThemeListener'
 
 interface ThemeContextValue {
-  theme: string
-  toggle: () => void
+  theme: ThemeState
+  setTheme: (theme: Theme) => void
 }
 
 const themeContextDefaultValue = {
-  theme: 'light',
-  toggle: () => {},
+  theme: Theme.LIGHT,
+  setTheme: () => {},
 }
 
 export const ThemeContext = createContext<ThemeContextValue>(
@@ -22,15 +23,26 @@ export default function ThemeProvider({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const isDarkTheme = useDarkThemeListener()
   const themeState = useStore(useThemeStore, (state) => state)
 
+  function checkTheme() {
+    if (isDarkTheme) {
+      return Theme.DARK
+    } else {
+      return Theme.LIGHT
+    }
+  }
+
   function ThemeContextValue(): ThemeContextValue {
-    return themeState
-      ? {
-          theme: themeState.theme,
-          toggle: themeState.toggle,
-        }
-      : themeContextDefaultValue
+    if (themeState) {
+      return {
+        theme:
+          themeState.theme === Theme.AUTO ? checkTheme() : themeState.theme,
+        setTheme: themeState.setTheme,
+      }
+    }
+    return themeContextDefaultValue
   }
 
   return (

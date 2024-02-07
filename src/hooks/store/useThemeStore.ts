@@ -1,21 +1,23 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
-export interface ThemeState {
-  theme: 'dark' | 'light'
-  toggle: () => void
+export type ThemeState = (typeof Theme)[keyof typeof Theme]
+export enum Theme {
+  DARK = 'dark',
+  LIGHT = 'light',
+  AUTO = 'auto',
+}
+export interface ThemeStoreState {
+  theme: ThemeState
+  setTheme: (theme: Theme) => void
 }
 
-export const useThemeStore = create<ThemeState>()(
+export const useThemeStore = create<ThemeStoreState>()(
   persist(
     (set, get) => ({
-      theme: 'light',
-      toggle() {
-        if (get().theme === 'dark') {
-          set({ theme: 'light' })
-        } else {
-          set({ theme: 'dark' })
-        }
+      theme: Theme.LIGHT,
+      setTheme(theme) {
+        set({ theme })
       },
     }),
     {
