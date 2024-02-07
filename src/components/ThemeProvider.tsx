@@ -1,47 +1,41 @@
 'use client'
 import { createContext, useState } from 'react'
+import useStore from '~/hooks/store/useStore'
+import { useThemeStore } from '~/hooks/store/useThemeStore'
 
-interface Theme {
+interface ThemeContextValue {
   theme: string
   toggle: () => void
 }
 
-export const ThemeContext = createContext<Theme>({
+const themeContextDefaultValue = {
   theme: 'light',
   toggle: () => {},
-})
+}
+
+export const ThemeContext = createContext<ThemeContextValue>(
+  themeContextDefaultValue
+)
 
 export default function ThemeProvider({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const [theme, setTheme] = useState('light')
+  const themeState = useStore(useThemeStore, (state) => state)
 
-  function ThemeContextValue(): Theme {
-    function dark() {
-      setTheme('dark')
-    }
-    function light() {
-      setTheme('light')
-    }
-    function toggle() {
-      if (theme === 'dark') light()
-      else dark()
-    }
-    return {
-      theme,
-      toggle,
-    }
+  function ThemeContextValue(): ThemeContextValue {
+    return themeState
+      ? {
+          theme: themeState.theme,
+          toggle: themeState.toggle,
+        }
+      : themeContextDefaultValue
   }
 
   return (
-    <html lang='en'>
-      <body className={theme}>
-        <ThemeContext.Provider value={ThemeContextValue()}>
-          {children}
-        </ThemeContext.Provider>
-      </body>
-    </html>
+    <ThemeContext.Provider value={ThemeContextValue()}>
+      {children}
+    </ThemeContext.Provider>
   )
 }
