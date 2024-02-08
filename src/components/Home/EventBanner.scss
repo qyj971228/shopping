@@ -10,10 +10,25 @@
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
-  span {
+  .description {
     color: #ffffffb2;
   }
-  .countDown {
+  .timeLeft {
     color: #ffffff;
+  }
+}
+@media screen and (min-width: 1440px) {
+}
+@media screen and (max-width: 500px) {
+  .eventBanner {
+    padding: 8px 24px;
+    gap: 16px;
+    font-size: 12px;
+    .description {
+      max-width: calc(100% - 60px - 24px - 16px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
   }
 }
