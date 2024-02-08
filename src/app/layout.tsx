@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Lexend } from 'next/font/google'
 import './globals.css'
 import ThemeProvider from '~/components/ThemeProvider'
 import Body from '~/components/Body'
@@ -8,6 +9,11 @@ export const metadata: Metadata = {
   description: 'e-shop',
 }
 
+const lexend = Lexend({
+  subsets: ['latin'],
+  display: 'swap',
+})
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -16,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <ThemeProvider>
-        <Body>{children}</Body>
+        <Body className={lexend.className}>{children}</Body>
       </ThemeProvider>
     </html>
   )

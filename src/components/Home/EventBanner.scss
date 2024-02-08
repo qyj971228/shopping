@@ -1,0 +1,19 @@
+.eventBanner {
+  background: #05422c;
+  display: flex;
+  width: 100%;
+  padding: 8px 0px;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  span {
+    color: #ffffffb2;
+  }
+  .countDown {
+    color: #ffffff;
+  }
+}
