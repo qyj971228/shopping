@@ -7,8 +7,8 @@ export default function useTimeLeft(target?: string) {
   const [timeLeft, setTimeLeft] = useState<string>('calculating...')
 
   useEffect(() => {
-    const targetDate = moment(target ?? defaultTargetDate)
-    const interval = setInterval(() => {
+    function updateTimeLeft() {
+      const targetDate = moment(target ?? defaultTargetDate)
       const now = moment()
       const diff = targetDate.diff(now)
       const duration = moment.duration(diff)
@@ -21,7 +21,9 @@ export default function useTimeLeft(target?: string) {
           minutes < 10 ? '0' + minutes : minutes
         } : ${seconds < 10 ? '0' + seconds : seconds}`
       )
-    }, 1000)
+    }
+    updateTimeLeft()
+    const interval = setInterval(updateTimeLeft, 1000)
     return () => clearInterval(interval)
   }, [target])
 
