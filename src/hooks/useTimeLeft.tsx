@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 const defaultTargetDate = '2024-12-31 23:59:59'
 
 export default function useTimeLeft(target?: string) {
-  const [timeLeft, setTimeLeft] = useState<string>('calculating...')
+  const [timeLeft, setTimeLeft] = useState<string>('')
 
   useEffect(() => {
     function updateTimeLeft() {
