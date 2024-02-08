@@ -8,7 +8,9 @@ export default function EventBanner() {
       <span className='description'>
         LIMITED OFFER: 30% OFF. Use RABBIT30 at Checkout.
       </span>
-      <span className='timeLeft'>{timeLeft}</span>
+      <span className='timeLeft' style={{ opacity: timeLeft ? 1 : 0 }}>
+        {timeLeft}
+      </span>
     </div>
   )
 }
