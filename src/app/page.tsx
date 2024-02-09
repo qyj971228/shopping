@@ -1,4 +1,4 @@
-import ThemeChange from '~/components/ThemeChange'
+import ThemeChange from '~/components/Home/ThemeChange'
 import './page.scss'
 import EventBanner from '~/components/Home/EventBanner'
 export default function Home() {

@@ -1,17 +1,24 @@
 'use client'
 
 import { useContext } from 'react'
-import { ThemeContext } from './ThemeProvider'
+import { ThemeContext } from './Provider/ThemeProvider'
+import { Lexend } from 'next/font/google'
 import c from 'classnames'
+
+/**
+ * the default font will be used when google fonts fails to load
+ */
+const lexend = Lexend({
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 export default function ThemeProvider({
   children,
-  className,
 }: Readonly<{
   children: React.ReactNode
-  className: string
 }>) {
   const { theme } = useContext(ThemeContext)
 
-  return <body className={c(className, theme)}>{children}</body>
+  return <body className={c(lexend.className, theme)}>{children}</body>
 }
