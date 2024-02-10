@@ -1,19 +1,36 @@
 .banner {
-  background: var(--Secondary-300, #648a7c);
-  width: 100%;
-  height: 720px;
-  .bg-img-size {
-    object-fit: cover;
+  @mixin size {
     width: 100%;
     height: 720px;
+  }
+  @include size();
+  background: var(--Secondary-300, #648a7c);
+  position: relative;
+  .bg-img {
+    @include size();
+    object-fit: cover;
+    position: relative;
+  }
+  .children {
+    @include size();
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
   }
 }
 
 @media screen and (max-width: 500px) {
   .banner {
-    height: 694px;
-    .bg-img-size {
+    @mixin size {
       height: 694px;
+    }
+    @include size();
+    .bg-img {
+      @include size();
+    }
+    .children {
+      @include size();
     }
   }
 }
