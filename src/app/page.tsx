@@ -1,12 +1,14 @@
-import ThemeChange from '~/components/Home/ThemeChange'
 import './page.scss'
-import EventBanner from '~/components/Home/EventBanner'
+// import ThemeChange from '~/components/Home/ThemeChange'
+import Notification from '~/components/Home/Notification'
+import Banner from '~/components/Home/Banner'
+
 export default function Home() {
   return (
     <main className='main'>
-      <EventBanner></EventBanner>
-      <div>this is home page</div>
-      <ThemeChange></ThemeChange>
+      {/* <ThemeChange></ThemeChange> */}
+      <Notification></Notification>
+      <Banner></Banner>
     </main>
   )
 }
