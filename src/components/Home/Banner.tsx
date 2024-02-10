@@ -12,9 +12,7 @@ export default function Banner({
       <Image
         className='bg-img'
         src={BannerBg}
-        alt='banner background'
-        width={1440}
-        height={720}
+        alt='banner-bg'
         placeholder='blur'
       />
       <div className='children'>{children}</div>
