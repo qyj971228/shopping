@@ -1,7 +1,7 @@
 import './page.scss'
 // import ThemeChange from '~/components/Home/ThemeChange'
-import Notification from '~/components/Home/Notification'
-import Banner from '~/components/Home/Banner'
+import Notification from '~/components/pages/Home/Notification'
+import Banner from '~/components/pages/Home/Banner'
 import { GET } from '~/utils/fetch'
 
 export default async function Home() {

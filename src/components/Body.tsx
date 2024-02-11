@@ -1,7 +1,7 @@
 'use client'
 
 import { useContext } from 'react'
-import { ThemeContext } from './Provider/ThemeProvider'
+import { ThemeContext } from './Providers/ThemeProvider'
 import { Lexend } from 'next/font/google'
 import c from 'classnames'
 

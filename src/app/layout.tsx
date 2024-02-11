@@ -1,7 +1,7 @@
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from 'next'
 import './globals.css'
-import ThemeProvider from '~/components/Provider/ThemeProvider'
+import ThemeProvider from '~/components/Providers/ThemeProvider'
 import Body from '~/components/Body'
 
 export const metadata: Metadata = {
