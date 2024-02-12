@@ -35,7 +35,7 @@ export default function Cubic({
 
   return (
     <div className='cubic' style={{ ...style, ...comCSS }}>
-      <Image className='banner-img' style={bannerCSS} src={src} alt='banner' />
+      <Image className='banner-img' style={bannerCSS} src={src} alt='banner' placeholder='blur' />
       <Image style={cubicCSS} src={CubicImg} alt='cubic' />
     </div>
   )
