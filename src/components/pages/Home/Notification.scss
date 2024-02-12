@@ -24,10 +24,9 @@
 @media screen and (max-width: 500px) {
   .notification {
     padding: 8px 24px;
-    gap: 16px;
     font-size: 12px;
     .description {
-      max-width: calc(100% - 60px - 24px - 16px);
+      max-width: calc(100% - 24px - 16px);
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
