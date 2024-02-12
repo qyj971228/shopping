@@ -1,9 +1,11 @@
 :root {
+  --Primary-500: #17af26;
+
   --Secondary-500: #05422c;
   --Secondary-300: #648a7c;
 
   --Other-Orange: #f2bc1b;
-  
+
   --Neutral-0: #fff;
   --Neutral-50: #f4f4f4;
 }
@@ -26,4 +28,10 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button {
+  outline: none;
+  border: 0;
+  background-color: transparent;
 }
