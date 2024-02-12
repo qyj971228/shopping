@@ -9,7 +9,7 @@ export default function Notification() {
       <span className='description'>
         LIMITED OFFER: 30% OFF. Use RABBIT30 at Checkout.
       </span>
-      <div className='timeLeft' style={{ opacity: timeLeft ? 1 : 0 }}>
+      <div className='time-left' style={{ opacity: timeLeft ? 1 : 0 }}>
         {timeLeft}
       </div>
     </div>

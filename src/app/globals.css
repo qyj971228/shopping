@@ -1,6 +1,11 @@
 :root {
   --Secondary-500: #05422c;
   --Secondary-300: #648a7c;
+
+  --Other-Orange: #f2bc1b;
+  
+  --Neutral-0: #fff;
+  --Neutral-50: #f4f4f4;
 }
 
 :root .dark {
