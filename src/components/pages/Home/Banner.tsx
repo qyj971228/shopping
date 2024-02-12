@@ -66,7 +66,7 @@ export default function Banner() {
               trans={{ x: 83, y: 40 }}
               cubicWidth={170}
               bannerWidth={108}
-              bannerTransY={40}
+              bannerTransY={60}
             ></Cubic>
             <Cubic
               src={Banner3}
