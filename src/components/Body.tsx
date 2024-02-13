@@ -8,6 +8,7 @@ import c from 'classnames'
 /**
  * the default font will be used when google fonts fails to load
  */
+
 const lexend = Lexend({
   subsets: ['latin'],
   display: 'swap',
