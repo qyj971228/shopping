@@ -8,6 +8,8 @@
 
   --Neutral-0: #fff;
   --Neutral-50: #f4f4f4;
+  --Neutral-300: #717378;
+  --Neutral-500: #1a1e26;
 }
 
 :root .dark {
@@ -34,4 +36,8 @@ button {
   outline: none;
   border: 0;
   background-color: transparent;
+}
+
+li {
+  list-style-type: none;
 }

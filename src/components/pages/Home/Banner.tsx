@@ -35,7 +35,7 @@ export default function Banner() {
               cubicWidth={296}
               bannerWidth={172}
               bannerTransY={100}
-              style={{zIndex: 1}}
+              style={{ zIndex: 1 }}
             ></Cubic>
             <Cubic
               src={Banner1}
@@ -59,7 +59,7 @@ export default function Banner() {
               cubicWidth={143}
               bannerWidth={88}
               bannerTransY={50}
-              style={{zIndex: 1}}
+              style={{ zIndex: 1 }}
             ></Cubic>
             <Cubic
               src={Banner1}
