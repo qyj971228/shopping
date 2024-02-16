@@ -1,7 +1,7 @@
 import './page.scss'
-import WhyChoseUs from '~/pages/Home/WhyChoseUs'
-import Banner from '~/pages/Home/Banner'
-import LocaleChange from '~/pages/Home/LocaleChange'
+import WhyChoseUs from '~/components/Home/WhyChoseUs'
+import Banner from '~/components/Home/Banner'
+import LocaleChange from '~/components/Home/LocaleChange'
 
 export default async function Home() {
   return (

@@ -1,4 +1,4 @@
-import Notification from '../pages/Home/Notification'
+import Notification from '~/components/Home/Notification'
 
 export default function Header() {
   return (
