@@ -1,30 +1,15 @@
 'use client'
 
-import { setLocales } from '~/cookie'
-
+import { Link } from '~/utils/navigation'
 export default function LocaleChange() {
   return (
-    <ul>
-      <li>
-        <button
-          onClick={() => {
-            setLocales('en')
-            window.location.href = window.location.href.replace('/zh', '/en')
-          }}
-        >
-          en
-        </button>
-      </li>
-      <li>
-        <button
-          onClick={() => {
-            setLocales('zh')
-            window.location.href = window.location.href.replace('/en', '/zh')
-          }}
-        >
-          zh
-        </button>
-      </li>
-    </ul>
+    <div>
+      <Link href='/' locale='en'>
+        英语
+      </Link>
+      <Link href='/' locale='zh'>
+        简体中文
+      </Link>
+    </div>
   )
 }

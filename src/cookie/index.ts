@@ -1,18 +1,12 @@
-'use server'
+// 'use server'
 
-import { cookies } from 'next/headers'
-import { Locales } from '~/middleware'
+// import { cookies } from 'next/headers'
 
-const names = {
-  locales: 'locales',
-}
+// const names = {}
 
-/**
- * locales
- */
-export async function setLocales(data: Locales) {
-  cookies().set(names.locales, data)
-}
-export async function getLocales() {
-  return cookies().get(names.locales)
-}
+// export async function set(data: any) {
+//   cookies().set('', data)
+// }
+// export async function getLocales() {
+//   return cookies().get('')
+// }

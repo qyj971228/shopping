@@ -1,6 +1,6 @@
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata } from 'next'
-import '~/app/globals.css'
+import '@/globals.css'
 import ThemeProvider from '~/providers/ThemeProvider'
 import Body from '~/components/Body'
 import Header from '~/components/Header'
@@ -11,15 +11,15 @@ export const metadata: Metadata = {
   description: 'e-shop',
 }
 
-export default function RootLayout({
-  params: { lang },
+export default function LocaleLayout({
   children,
-}: Readonly<{
-  params: { lang: string }
+  params: { locale },
+}: {
   children: React.ReactNode
-}>) {
+  params: { locale: string }
+}) {
   return (
-    <html lang={lang}>
+    <html lang={locale}>
       <ThemeProvider>
         <Body>
           <SpeedInsights></SpeedInsights>

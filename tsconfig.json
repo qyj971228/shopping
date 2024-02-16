@@ -28,6 +28,6 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "type.d.ts"
-  ],
+, "src/app/[locale]/not-found.jsx"  ],
   "exclude": ["node_modules"]
 }

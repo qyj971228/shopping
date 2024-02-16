@@ -5,11 +5,10 @@ import Banner1 from '@/img/banner1.png'
 import Banner2 from '@/img/banner2.png'
 import Banner3 from '@/img/banner3.png'
 import Cubic from './Cubic'
-import { getDictionary } from '../../utils/dictionaries'
+import { useTranslations } from 'next-intl'
 
-export default async function Banner({ lang }: { lang: string }) {
-  const dict = await getDictionary(lang)
-
+export default function Banner() {
+  const t = useTranslations('Index')
   return (
     <div className='banner'>
       <Image
@@ -20,7 +19,7 @@ export default async function Banner({ lang }: { lang: string }) {
       />
       <div className='content'>
         <div className='left-part'>
-          <div className='subtitle'>{dict['BEST SELLER']}</div>
+          <div className='subtitle'>{t('BEST SELLER')}</div>
           <div className='title'>BEST DISPENSARY TO BUY WEED ONLINE</div>
           <div className='describes'>Vitamins & Supplements</div>
           <div className='discount'>
