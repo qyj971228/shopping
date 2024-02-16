@@ -1,7 +1,7 @@
 'use client'
 import { createContext, useState } from 'react'
-import useStore from '~/hooks/store/useStore'
-import { Theme, ThemeState, useThemeStore } from '~/hooks/store/useThemeStore'
+import useStore from '~/store/useStore'
+import { Theme, ThemeState, useThemeStore } from '~/store/useThemeStore'
 import useDarkThemeListener from '~/hooks/useDarkThemeListener'
 
 interface ThemeContextValue {

@@ -1,7 +1,7 @@
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import type { Metadata } from 'next'
-import './globals.css'
-import ThemeProvider from '~/components/Providers/ThemeProvider'
+import '~/app/globals.css'
+import ThemeProvider from '~/providers/ThemeProvider'
 import Body from '~/components/Body'
 import Header from '~/components/Header'
 import Footer from '~/components/Footer'
@@ -12,12 +12,14 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({
+  params: { lang },
   children,
 }: Readonly<{
+  params: { lang: string }
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en'>
+    <html lang={lang}>
       <ThemeProvider>
         <Body>
           <SpeedInsights></SpeedInsights>

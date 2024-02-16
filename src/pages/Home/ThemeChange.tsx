@@ -1,7 +1,7 @@
 'use client'
 import { useContext } from 'react'
-import { ThemeContext } from '~/components/Providers/ThemeProvider'
-import { Theme } from '~/hooks/store/useThemeStore'
+import { ThemeContext } from '~/providers/ThemeProvider'
+import { Theme } from '~/store/useThemeStore'
 
 export default function ThemeChange() {
   const { theme, setTheme } = useContext(ThemeContext)
