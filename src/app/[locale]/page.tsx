@@ -9,6 +9,9 @@ export default async function Home() {
       <Banner></Banner>
       <WhyChoseUs></WhyChoseUs>
       <LocaleChange></LocaleChange>
+      <h1 className="text-3xl font-bold underline">
+        Hello world!
+      </h1>
     </main>
   )
 }
